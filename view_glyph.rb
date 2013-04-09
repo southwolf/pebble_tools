@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 class Image
   attr_accessor :width, :height, :bitmap
 end

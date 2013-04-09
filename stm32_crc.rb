@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 # Original by Hexxeh https://github.com/Hexxeh/libpebble
 
 class Stm32Crc

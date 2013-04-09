@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 # http://pebbledev.org/wiki/Resource_Font_Format
 require "./stm32_crc"
 

@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 # http://pebbledev.org/wiki/Firmware_Updates
 
 require "./stm32_crc"
@@ -6,7 +8,7 @@ class Resource
 end
 
 
-File.open('system_resources.pbpack', 'rb') do |f|
+File.open(ARGV[0], 'rb') do |f|
   
   # 0x00 : Number of resources
   num_of_res = f.read(1)[0].ord
@@ -40,7 +42,7 @@ File.open('system_resources.pbpack', 'rb') do |f|
     resources[resIdx].crc = res[12..15].unpack('H*')[0]
 
     # Read Data
-    f2 = File.open('system_resources.pbpack', 'rb')
+    f2 = File.open(ARGV[0], 'rb')
     # Data begins at 0x101C
     f2.seek(4124+resources[resIdx].offset)
     resources[resIdx].data = f2.read(resources[resIdx].size)
